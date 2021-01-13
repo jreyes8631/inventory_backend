@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :items
   resources :categories
   get 'private/test'
   devise_for :users, path: '', path_names: {
