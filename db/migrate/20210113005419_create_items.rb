@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.string :color
       t.string :details
       t.references :user, null: false, foreign_key: true
+      t.references :categories, null: false, foreign_key: true
 
       t.timestamps
     end
