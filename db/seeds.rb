@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-eduard = User.create(email: 'test@test.com', password: 'password')
+user = User.create!(email: 'test2@test.com', password: 'password2')
 
-eduard.categories.build(title: "Home", description:"kitchen").save
+category = user.categories.find_or_create_by(title: "Home", description:"kitchen")
 
-eduard.item.build(name: "dish", quantity: 10, color: "white", details: "new").save
+
+item = category.items.find_or_create_by(name: "dish", quantity: 10, color: "white", details: "new")
+
