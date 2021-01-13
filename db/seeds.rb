@@ -6,4 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(email: 'test@test.com', password: 'password').save
+User.create(email: 'test@test.com', password: 'password')
+
+Category.create(title: "Home", description:"kitchen")
+
+Item.create(name: "dish", quantity: 10, color: "white", details: "new")

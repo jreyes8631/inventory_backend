@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2021_01_13_005419) do
     t.string "color"
     t.string "details"
     t.integer "user_id", null: false
-    t.integer "categories_id", null: false
+    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["categories_id"], name: "index_items_on_categories_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -49,6 +49,6 @@ ActiveRecord::Schema.define(version: 2021_01_13_005419) do
   end
 
   add_foreign_key "categories", "users"
-  add_foreign_key "items", "categories", column: "categories_id"
+  add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
 end
