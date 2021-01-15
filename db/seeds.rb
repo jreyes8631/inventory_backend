@@ -6,10 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create!(email: 'test4@test.com', password: 'password4')
+user = User.first
 
-category = user.categories.find_or_create_by(title: "Office", description:"QM")
+category = user.categories.find_or_create_by(title: "kitchen", description:"office")
 
 
-item = category.items.find_or_create_by(name: "dish", quantity: 10, color: "white", details: "new", user_id: user.id)
+item1 = category.items.find_or_create_by(name: "dish", quantity: 10, color: "white", details: "new", user_id: user.id)
+item2 = category.items.find_or_create_by(name: "cups", quantity: 10, color: "white", details: "new", user_id: user.id)
+item3 = category.items.find_or_create_by(name: "pan", quantity: 10, color: "black", details: "new", user_id: user.id)
 
