@@ -8,10 +8,14 @@
 
 user = User.first
 
-category = user.categories.find_or_create_by(title: "kitchen", description:"office")
+category1 = user.categories.find_or_create_by(title: "Home", description:"kitchen")
+category2 = user.categories.find_or_create_by(title: "Home", description:"living room")
+category3 = user.categories.find_or_create_by(title: "Home", description:"Room")
 
+item1 = category1.items.find_or_create_by(name: "Dishes", quantity: 30, color: "white", details: "I bought recently", user_id: user.id)
+item2 = category1.items.find_or_create_by(name: "Coffee Mugs", quantity: 10, color: "5 whites and 5 blacks", details: "Used in good conditions", user_id: user.id)
+item3 = category1.items.find_or_create_by(name: "pan", quantity: 10, color: "black", details: "new", user_id: user.id)
 
-item1 = category.items.find_or_create_by(name: "dish", quantity: 10, color: "white", details: "new", user_id: user.id)
-item2 = category.items.find_or_create_by(name: "cups", quantity: 10, color: "white", details: "new", user_id: user.id)
-item3 = category.items.find_or_create_by(name: "pan", quantity: 10, color: "black", details: "new", user_id: user.id)
-
+item1 = category2.items.find_or_create_by(name: "Bed", quantity: 1, color: "white", details: "In good condition", user_id: user.id)
+item2 = category2.items.find_or_create_by(name: "Table", quantity: 1, color: "Black", details: "This is where I charge my phone", user_id: user.id)
+item3 = category2.items.find_or_create_by(name: "pillow", quantity: 1, color: "White", details: "My favorite pillow", user_id: user.id)
