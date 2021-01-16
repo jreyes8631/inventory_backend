@@ -71,3 +71,5 @@ class CategoriesController < ApplicationController
      params.require(:category).permit(:title, :description, :user_id)
     end
 end
+
+
